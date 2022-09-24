@@ -2,11 +2,9 @@
 using Food.DAL.Models;
 using Interfraces.Interface;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Repositories.Repository
 {
@@ -28,7 +26,8 @@ namespace Repositories.Repository
 
         public IEnumerable<CustomerFoodTypeOrderModel> GetAllOrders()
         {
-            var results = _context.Orders.Include(x => x.Customer).ToList();
+            
+            var results = _context.Orders.Include(x => x.Customer).Include(p=>p.FoodType).ToList();
 
             List<CustomerFoodTypeOrderModel> CustomerData = new List<CustomerFoodTypeOrderModel>();
 
@@ -36,18 +35,10 @@ namespace Repositories.Repository
             {
                 CustomerData.Add(new CustomerFoodTypeOrderModel()
                 {
-
-                    //CustomerId = r.CustomerId,
-                    //Name = r.Name,
-                    //Surname = r.Surname,
-                    //ContactNumber = r.ContactNumber,
-                    //EnailAdress = r.EnailAdress,
-                    //CountryName = r.Country.CountryName,
-
                          OrderId =r.OrderId,
                          OrderDate =r.OrderDate,
                        CustomerName =r.Customer.Name,
-                      // OrderName =r.FoodType.FoodName,
+                       OrderName =r.FoodType.FoodName,
 
     });
             }
