@@ -1,4 +1,5 @@
-﻿using Food.DAL.Models;
+﻿using Food.DAL.ExtentedModel;
+using Food.DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace Interfraces.Interface
 {
    public interface IOrderRepository
     {
-        IEnumerable<Order> GetAllOrders();
+        IEnumerable<CustomerFoodTypeOrderModel> GetAllOrders();
         Order GetOrderById(int OrderId);
         void InsertOrder(Order order);
         void UpdateOrder(Order order);
