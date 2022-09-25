@@ -9,6 +9,8 @@ namespace Food.DAL.Models
     {
         public int OrderId { get; set; }
         public DateTime OrderDate { get; set; }
+        //addet collection date
+       public DateTime CollectionDate { get; set; }
         public int CustomerId { get; set; }
         public int FoodTypeId { get; set; }
 

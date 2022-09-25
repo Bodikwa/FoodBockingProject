@@ -28,7 +28,17 @@ namespace FoodBockingSystem.Controllers
         // GET: OrderIdController
         public ActionResult Index()
         {
-            return View(_orderRepository.GetAllOrders());
+          //  if (searchBy== "CustomerName")
+           // {
+                return View(_orderRepository.GetAllOrders());
+          //  }
+          //  else
+          //  {
+
+          //  }
+
+           // return View(_orderRepository.GetAllOrders());
+
         }
 
         // GET: OrderIdController/Details/5

@@ -12,7 +12,7 @@ namespace Food.DAL.Models
             Orders = new HashSet<Order>();
         }
 
-        public int CustomerId { get; set; }
+       public int CustomerId { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string ContactNumber { get; set; }

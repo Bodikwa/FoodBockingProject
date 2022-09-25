@@ -83,7 +83,8 @@ namespace Food.DAL.Models
                 entity.ToTable("Order");
 
                 entity.Property(e => e.OrderDate).HasColumnType("date");
-
+                entity.Property(e => e.CollectionDate).HasColumnType("date");
+                
                 entity.HasOne(d => d.Customer)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.CustomerId)

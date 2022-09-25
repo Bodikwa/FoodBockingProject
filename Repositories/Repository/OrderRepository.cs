@@ -37,10 +37,12 @@ namespace Repositories.Repository
                 {
                          OrderId =r.OrderId,
                          OrderDate =r.OrderDate,
+                        CollectionDate=r.CollectionDate,
                        CustomerName =r.Customer.Name,
                        OrderName =r.FoodType.FoodName,
+                       
 
-    });
+                 });
             }
             return CustomerData;
         }

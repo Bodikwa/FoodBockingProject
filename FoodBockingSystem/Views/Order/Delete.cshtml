@@ -12,24 +12,38 @@
    
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+
+        <dt class="col-sm-2">
             <label asp-for="OrderDate" class="control-label">Order Date</label>
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.OrderDate)
         </dd>
+
+
+        <dt class="col-sm-2">
+            <label asp-for="CollectionDate" class="control-label">Collection Date</label>
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CollectionDate)
+        </dd>
+
+
+
         <dt class="col-sm-2">
             <label asp-for="CustomerId" class="control-label">Customer Name</label>
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Customer.Name)
-        </dd class>
+        </dd>
+
+
         <dt class="col-sm-2">
             <label asp-for="FoodTypeId" class="control-label">Order Name</label>
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FoodType.FoodName)
-        </dd class>
+        </dd>
     </dl>
     
     <form asp-action="Delete">
