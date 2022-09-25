@@ -78,6 +78,21 @@ namespace Food.DAL.Models
                     .HasMaxLength(255);
             });
 
+            //Creating The new table that it will chect order is staitus
+            //Order is ready For Collection
+            //Order is in progress
+
+            //modelBuilder.Entity<Staitucess>(entity =>
+            //{
+            //    entity.ToTable("Staitucess");
+
+            //    entity.Property(e => e.FoodName)
+            //        .IsRequired()
+            //        .HasMaxLength(255);
+            //});
+
+
+
             modelBuilder.Entity<Order>(entity =>
             {
                 entity.ToTable("Order");
@@ -97,6 +112,9 @@ namespace Food.DAL.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("Order_FoodTypeId_fkey");
             });
+
+
+
 
             OnModelCreatingPartial(modelBuilder);
         }
