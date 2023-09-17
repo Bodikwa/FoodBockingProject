@@ -32,15 +32,33 @@
                 <input asp-for="EnailAdress" class="form-control" />
                 <span asp-validation-for="EnailAdress" class="text-danger"></span>
             </div>
+
             <div class="form-group">
 
-                <label asp-for="CountryId" class="control-label">Country Name</label>
-                <select asp-for="CountryId" class="form-control" asp-items="ViewBag.countryViewbag">
-                    <option value=" ">--select--</option>
-                </select>
+                    <label asp-for="CountryId" class="control-label">Country Name</label>
+                    <select asp-for="CountryId" class="form-control" asp-items="ViewBag.countryViewbag">
+                        <option value=" ">--select--</option>
+                    </select>
+
+                </div>
+
+            @*<div class="form-group">
+
+                <div class="col-md-6">
+
+                    <div class="position-relative form-group">
+                        <label for="CountryId." class="">Country Name</label>
+                        <input asp-for="Country" class="form-control" 
+                          required placeholder="Enter name of recently visited location" />
+                        <span asp-validation-for="CountryId" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>*@
+            
 
 
-            </div>
+
+
             <div class="form-group">
                 <input type="submit" value="Add" class="btn btn-primary" />
             </div>
@@ -49,9 +67,23 @@
 </div>
 
 <div>
-    <a asp-action="Index"class="btn btn-primary">Back</a>
+    <a asp-action="Index" class="btn btn-primary">Back</a>
 </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&key=AIzaSyCUqE3EyGYZe75yUrYJdS2M4j868WUU350"></script>
+    <script type="text/javascript">
+        google.maps.event.addDomListener(window, 'load', function () {
+            var options = {
+                componentRestrictions: { country: "za" }
+            };
+            var input = document.getElementById('Country');
+            var places = new google.maps.places.Autocomplete(input, options);
+        });
+    </script>
+
+
+
 }

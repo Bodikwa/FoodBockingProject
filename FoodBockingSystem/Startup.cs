@@ -27,8 +27,8 @@ namespace FoodBockingSystem
             services.AddControllersWithViews();
 
             //registering interfaces and repositories in startup class 
-            //using dependency injection
-            services.AddScoped<ICountryRepository, CountryRepository>();
+            //using dependency injectioniiiiiiiiiiiiiiiiiiiiiiiiiiiiiio
+            services.AddScoped<ICountryRepository, CountryRepository>();m,
             services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddScoped<IFoodTypeRepository, FoodTypeRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
